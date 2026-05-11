@@ -1,4 +1,4 @@
-# CORTEX-OS
+# CORTEX-OS (NÃO TESTADO)
 
 ## 🎯 Overview
 **CORTEX-OS** - Sistema Operacional Linux com IA Auto-Escalável
