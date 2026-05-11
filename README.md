@@ -1,83 +1,162 @@
-# CORTEX-OS-
-CORTEX-OS  SISTEMA OPERACIONAL LINUX IA 
+# CORTEX-OS
 
-ISO PRONTA!
-Shell
-Get-Item cortex-iso-output/cortex-os.iso | Select-Object Name, @{Name="Size(GB)";Expression={[math]::Round($_.Length/1GB,2)}}, @{Name="CriadoEm";Expression={$_.CreationTime}}
-✅ BUILD CONCLUÍDO COM SUCESSO!
-Arquivo:cortex-iso-output/cortex-os.iso (2.95 GB)
-🎯 CortexOS - Sistema Operacional IA Auto-Escalável
-✨ Recursos Inclusos:
-🖥 Interface Gráfica
-✅ KDE Plasma Desktop (completo)
-✅ SDDM (login screen)
-✅ Dolphin (gerenciador de arquivos)
-✅ Konsole (terminal gráfico)
-🤖 IA & Ollama
-✅ Ollama (LLM runtime - baixa e executa modelos)
-✅ Suporta Mistral, Neural Chat, LLaMA, etc.
-✅ Auto-inicia ao boot
-✅ Modelos baixados em /opt/cortex-os/models
-🧠 Dashboard de Controle Web
-✅ Acesso em http://localhost:5000
-✅ A IA acessa dashboard para se gerenciar
-✅ Baixar/ativar novos modelos LLM
-✅ Instalar ferramentas (pacman, pip, npm)
-✅ Ver logs do sistema
-✅ Gerenciar plugins
-🌐 Browser Integrado
-✅ Firefox + Chromium
-✅ A IA pode acessar internet via browser
-✅ Coleta informações online
-✅ Atualiza conhecimento continuamente
-🔧 Auto-Melhoria
-✅ API Python (cortex_ai_api.py)
-✅ IA pode instalar pacotes automaticamente
-✅ Criar/executar plugins (/var/lib/cortex-ai/plugins/)
-✅ Sistema de logging completo
-✅ Health check (Ollama, internet, disco, memória)
-👤 Segurança
-✅ ❌ Sem usuários padrão (removidos)
-✅ Root bloqueado
-✅ Setup interativo na primeira inicialização
-✅ Usuário com sudo automático
-📦 Ferramentas Pré-Instaladas
-Python 3 + pip + virtualenv
-Git, Vim, Nano, Tmux
-Redis, SQLite, PostgreSQL
-Node.js + npm
-GCC, LLVM, CMake, Make
-Prometheus, Grafana (monitoramento)
-FFmpeg, ImageMagick, SoX (mídia)
-🚀 Como Usar:
-1️⃣ Boot da ISO
-1. Criar VM/USB com a ISO
-2. Boot (aguarde ~30 segundos)
-3. Tela de login gráfica SDDM
-2️⃣ Setup Inicial
-Criar usuário (ex: "cortex")
-Definir senha
-3️⃣ Acessar Dashboard IA
-Abrir Firefox/Chromium
-Ir para: http://localhost:5000
-4️⃣ A IA Pode Fazer:
-# Baixar novo modelo LLM
+## 🎯 Overview
+**CORTEX-OS** - Sistema Operacional Linux com IA Auto-Escalável
+
+An innovative Linux-based operating system powered by artificial intelligence, featuring auto-scaling capabilities and intelligent system management.
+
+---
+
+## ✨ Key Features
+
+### 🖥 Graphical Interface
+- **KDE Plasma Desktop** (complete environment)
+- **SDDM** (modern login screen)
+- **Dolphin** (file manager)
+- **Konsole** (graphical terminal)
+
+### 🤖 AI & Ollama Integration
+- **Ollama** LLM runtime for running AI models locally
+- Supports: Mistral, Neural Chat, LLaMA, and more
+- Auto-starts on boot
+- Models stored in `/opt/cortex-os/models`
+
+### 🧠 Web Control Dashboard
+- Access at `http://localhost:5000`
+- AI can self-manage through the dashboard
+- Download/activate new LLM models
+- Install tools (pacman, pip, npm)
+- View system logs
+- Manage plugins
+
+### 🌐 Integrated Browser
+- **Firefox** + **Chromium** pre-installed
+- AI can access the internet via browser
+- Continuous knowledge updates
+
+### 🔧 Auto-Improvement System
+- Python API (`cortex_ai_api.py`)
+- AI can install packages automatically
+- Create/execute plugins in `/var/lib/cortex-ai/plugins/`
+- Complete logging system
+- Health check monitoring (Ollama, internet, disk, memory)
+
+### 👤 Security
+- No default users (removed)
+- Root account locked
+- Interactive setup on first boot
+- Auto sudo for created user
+
+### 📦 Pre-Installed Tools
+- **Development**: Python 3 + pip + virtualenv, Git, GCC, LLVM, CMake, Make
+- **Editors**: Vim, Nano
+- **Databases**: Redis, SQLite, PostgreSQL
+- **Runtime**: Node.js + npm
+- **Monitoring**: Prometheus, Grafana
+- **Media**: FFmpeg, ImageMagick, SoX
+- **Utilities**: Tmux, and more
+
+---
+
+## 🚀 Getting Started
+
+### 1️⃣ Boot the ISO
+1. Create VM/USB with the ISO
+2. Boot (wait ~30 seconds)
+3. SDDM graphical login screen appears
+
+### 2️⃣ Initial Setup
+- Create user (e.g., "cortex")
+- Set password
+- System ready to go
+
+### 3️⃣ Access AI Dashboard
+1. Open Firefox or Chromium
+2. Navigate to: `http://localhost:5000`
+
+### 4️⃣ What the AI Can Do
+
+**Pull a new LLM model:**
+```bash
 PUT /api/pull-model {"model": "llama2"}
+```
 
-# Instalar ferramentas
+**Install tools:**
+```bash
 POST /api/install-tool {"tool": "some-package", "type": "pacman"}
+```
 
-# Ver saúde do sistema
+**Check system health:**
+```bash
 GET /api/health
+```
 
-# Acessar via browser
-firefox & # A IA navega na internet
-📚 Arquitetura Auto-Escalável:
-┌─────────────────────────────────────┐ │ CortexOS - Sistema IA │ ├─────────────────────────────────────┤ │ ┌──────────────────────────────────┐ │ │ │ Dashboard Web (5000) │ │ │ │ └─ Controle IA │ │ │ └──────────────────────────────────┘ │ │ │ │ │ ┌──────────────▼──────────────────┐ │ │ │ API Python (cortex_ai_api.py) │ │ │ │ ├─ Install tools │ │ │ │ ├─ Pull models │ │ │ │ ├─ Execute plugins │ │ │ │ └─ Health check │ │ │ └──────────────┬──────────────────┘ │ │ │ │ │ │ │ │ │ │ ▼ ▼ ▼ ▼ ▼ ▼ │ │ ┌────────────────────────────┐ │ │ │ Ollama (LLM Runtime) │ │ │ │ Modelos (Mistral/Llama) │ │ │ └────────────────────────────┘ │ │ │ │ │ │ │ │ ▼ ▼ ▼ ▼ │ │ ┌─────────────────────────────┐ │ │ │ Browser │ Ferramentas │ DB │ │ │ │ Internet │ Python/Npm │ Redis│ │ │ └─────────────────────────────┘ │ └─────────────────────────────────────┘
-🎁 Próximos Passos (Sugestões):
-Testar em VirtualBox/QEMU com 8GB RAM mínimo
-Criar plugins IA em /var/lib/cortex-os/plugins/
-Integrar com APIs (OpenAI, Hugging Face, etc.)
-Configurar CI/CD para atualizações automáticas
-Documentar casos de uso do seu OS de IA
-A ISO está 100% pronta para um OS de IA auto-escalável onde a própria inteligência artificial pode evoluir! 🚀⚡️
+**Access the internet:**
+```bash
+firefox &  # AI navigates the web
+```
+
+---
+
+## 📊 System Architecture
+
+```
+┌─────────────────────────────────┐
+│   CortexOS - AI Operating System │
+├─────────────────────────────────┤
+│  KDE Plasma (GUI)               │
+│  Ollama (LLM Runtime)           │
+│  Web Dashboard (Control)        │
+│  Python API (Auto-Improvement)  │
+│  Plugin System                  │
+├─────────────────────────────────┤
+│  Linux Kernel + Tools           │
+└─────────────────────────────────┘
+```
+
+---
+
+## 📋 System Requirements
+
+- **Minimum RAM**: 8GB
+- **Disk Space**: 3GB (ISO size: 2.95 GB)
+- **Virtualization**: VirtualBox, QEMU, or physical machine
+- **CPU**: Multi-core recommended
+
+---
+
+## 📚 Next Steps & Suggestions
+
+- [ ] Test in VirtualBox/QEMU with 8GB RAM minimum
+- [ ] Create custom AI plugins in `/var/lib/cortex-os/plugins/`
+- [ ] Integrate with external APIs (OpenAI, Hugging Face, etc.)
+- [ ] Configure CI/CD for automatic OS updates
+- [ ] Document your AI use cases
+
+---
+
+## 🎁 Current Status
+
+✅ **BUILD COMPLETE AND SUCCESSFUL!**
+
+- **File**: `cortex-iso-output/cortex-os.iso`
+- **Size**: 2.95 GB
+- **Status**: 100% ready for deployment
+
+The ISO is fully ready for a self-scaling AI operating system where artificial intelligence can evolve autonomously! 🚀⚡️
+
+---
+
+## 📄 License
+
+*License information coming soon*
+
+---
+
+## 🤝 Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+---
+
+**Last Updated**: 2026-05-11
