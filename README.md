@@ -159,4 +159,6 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 
 ---
 
-**Last Updated**: 2026-05-11
+**Last Updated**: 2026-05-11  
+
+DOWNLOAD E LEITURA - https://drive.google.com/drive/folders/1yKv-SztMmKj9b5HBSfCE1lar5vCj_GjV?usp=sharing
